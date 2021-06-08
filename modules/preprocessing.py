@@ -34,17 +34,6 @@ def rule_based_clumping(samples):
 
   return output
 
-# # (starting at 702 in data)
-# MANUAL_LABELS = [True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, False, True, True, False, True, True, False, True, False, True, True, True, False, True, False, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, True, False, False, False, False, True, False, True, True, False, False, True, True, False, False, True, True, False, False, True, False, False, False, True, True, False, True, False, False, False, False, False, True, True, True, True, True, False, False, False, False, False, True, True, True, True, True, False, True, False, False, True, True, True, True, False, False, False, True, True, True, True, True, False, False, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, False, False, True, True, True, False, True, True, False, True, True, True, True, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, False, True, False, True, False, True, True, False, True, True, True, False, False, True, False, False, False, True, False, False, True, True, True, False, True, False, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, False, False, False, True, True, True, True, False, False, True, True, True, False, True, True, True, False, True, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, True, False, True, True, False, False, True, True, False, False, True, True, False, False, False, False, True, True, True, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, True, True, True, False, True, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, False, True, True, True, True, True, False, True, True, True, True, True, False, False, False, True, False, False, True, True, True, True, False, True, False, False, False, False, False, False, True, True, False, True, False, False, True, False, False, False, False, False, True, True, False, False, True, True, False, True, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, True, True, False, True, True, False, True, True, False, True, True, True, False, True, True, True, True, False, True, True, True, False, False, True, True, False, False, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, False, True, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, False, False, True, False, True, False, True, False, False, False, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, False, True, False, True, True, True, True, True, True, False, True, True, True, False, False, True, False, False, False, False, False, True, False, False, True, False, True, False, True, False, True, False, True, False, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, False, True, True, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, False, False, True, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, False, True, True, False, False, False, True, True, False, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, False, False, False, False, False, True, True, False, True, True, False, True, True, False]
-
-# STARTER_POS = []
-# STARTER_NEG = []
-# for i in range(702, 702 + len(MANUAL_LABELS)):
-#   if MANUAL_LABELS[i - 702]:
-#     STARTER_POS.append(data[i])
-#   else:
-#     STARTER_NEG.append(data[i])
-
 class preprocessing:
   # uses https://www.kaggle.com/jealousleopard/goodreadsbooks/download (download
   # and place csv file in data/raw before running)
@@ -52,6 +41,10 @@ class preprocessing:
     # open and load csv
     file = open('data/raw/books.csv', 'r')
     data = csv.reader(file)
+
+    # open and load pre-tagged positive data
+    pretagged_pos_file = open('data/pretagged/positive.json')
+    pretagged_pos_data = json.loads(pretagged_pos_file)
 
     # extract rows (throw away headers)
     rows = list(data)[1:]
@@ -67,7 +60,7 @@ class preprocessing:
     }
 
     # generate samples
-    samples = STARTER_POS + ([None] * len(rows))
+    samples = pretagged_pos_data + ([None] * len(rows))
 
     # warning if mismatched num samples
     if (len(samples) != NUM_SAMPLES):
@@ -111,10 +104,10 @@ class preprocessing:
             else: sample.append(f'{isbn13}')
         if random_fields[j] == 'price': sample.append(f'${price}')
 
-      samples[i + len(STARTER_POS)] = sample[0]
+      samples[i + len(pretagged_pos_data)] = sample[0]
       for s in sample[1:]:
         prefix = ',' if random.random() > 0.65 else ''
-        samples[i + len(STARTER_POS)] += f'{prefix} {s}'
+        samples[i + len(pretagged_pos_data)] += f'{prefix} {s}'
 
     random.shuffle(samples)
 
@@ -129,6 +122,10 @@ class preprocessing:
   def generate_negative():
     # load orc
     orc = json.loads(open('data/raw/orc.json', 'r').read())
+
+    # open and load pre-tagged positive data
+    pretagged_neg_file = open('data/pretagged/negative.json')
+    pretagged_neg_data = json.loads(pretagged_neg_file)
 
     # extract descriptions (will generate 'negative' samples from this,
     # as it representative of the type of text textbook names are commonly
@@ -146,8 +143,8 @@ class preprocessing:
 
     divider = int(NUM_SAMPLES * .85)
 
-    samples = STARTER_NEG + ([None] * (NUM_SAMPLES - len(STARTER_NEG)))
-    for i in range(len(STARTER_NEG), NUM_SAMPLES):
+    samples = pretagged_neg_data + ([None] * (NUM_SAMPLES - len(pretagged_neg_data)))
+    for i in range(len(pretagged_neg_data), NUM_SAMPLES):
       samples[i] = get_sample()
 
     random.shuffle(samples)
