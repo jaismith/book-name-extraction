@@ -8,13 +8,13 @@ import constants
 from modules import loader, tagger, preprocessing
 
 # download source data
-FILENAMES = [constants.TIMETABLE_FILENAME, constants.ORC_FILENAME]
-for filename in FILENAMES:
-  if not isfile('data/raw/' + filename):
-    loader.fetch_source(constants.DATA_SOURCE, filename)
+# FILENAMES = [constants.TIMETABLE_FILENAME, constants.ORC_FILENAME]
+# for filename in FILENAMES:
+#   if not isfile('data/raw/' + filename):
+#     loader.fetch_source(constants.DATA_SOURCE, filename)
 
 # load into dictionaries
-timetable = json.loads(open('data/raw/' + constants.TIMETABLE_FILENAME).read())
+timetable = json.loads(open('data/raw/timetable.json').read())
 
 # get text field links
 text_data = None
@@ -42,10 +42,25 @@ for snippet in text_data:
 
 data = preprocessing.rule_based_clumping(data)
 
+labels = [True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, False, True, True, False, True, True, False, True, False, True, True, True, False, True, False, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, True, False, False, False, False, True, False, True, True, False, False, True, True, False, False, True, True, False, False, True, False, False, False, True, True, False, True, False, False, False, False, False, True, True, True, True, True, False, False, False, False, False, True, True, True, True, True, False, True, False, False, True, True, True, True, False, False, False, True, True, True, True, True, False, False, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, False, False, True, True, True, False, True, True, False, True, True, True, True, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, False, True, False, True, False, True, True, False, True, True, True, False, False, True, False, False, False, True, False, False, True, True, True, False, True, False, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, False, False, False, True, True, True, True, False, False, True, True, True, False, True, True, True, False, True, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, True, False, True, True, False, False, True, True, False, False, True, True, False, False, False, False, True, True, True, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, True, True, True, False, True, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, False, True, True, True, True, True, False, True, True, True, True, True, False, False, False, True, False, False, True, True, True, True, False, True, False, False, False, False, False, False, True, True, False, True, False, False, True, False, False, False, False, False, True, True, False, False, True, True, False, True, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, True, True, False, True, True, False, True, True, False, True, True, True, False, True, True, True, True, False, True, True, True, False, False, True, True, False, False, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, False, True, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, False, False, True, False, True, False, True, False, False, False, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, False, True, False, True, True, True, True, True, True, False, True, True, True, False, False, True, False, False, False, False, False, True, False, False, True, False, True, False, True, False, True, False, True, False, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, False, True, True, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, False, False, True, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, False, True, True, False, False, False, True, True, False, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, True, True, False, False, False, False, False, False, True, True, False, True, True, False, True, True, False]
+
+STARTER_POS = []
+STARTER_NEG = []
+for i in range(702, 702 + len(labels)):
+  if labels[i - 702]:
+    STARTER_POS.append(data[i])
+  else:
+    STARTER_NEG.append(data[i])
+
+f_pos = open('f_pos.json', 'w')
+f_pos.write(json.dumps(STARTER_POS))
+f_neg = open('f_neg.json', 'w')
+f_neg.write(json.dumps(STARTER_NEG))
+
 # preprocessing.generate_positive()
 
-start = input(f'Enter starting index for tagging (0 - {len(data)}): ')
-print(tagger.tag(data, int(start)))
+# start = input(f'Enter starting index for tagging (0 - {len(data)}): ')
+# print(tagger.tag(data, int(start)))
 
 # for snippet in data[:100]:
 #   print(snippet, end='\n\nREQUIREMENT\n')

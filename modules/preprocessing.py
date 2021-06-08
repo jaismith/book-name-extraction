@@ -61,7 +61,7 @@ class preprocessing:
 
     # generate samples
     samples = pretagged_pos_data + ([None] * len(rows))
-
+    print(pretagged_pos_data)
     # warning if mismatched num samples
     if (len(samples) != NUM_SAMPLES):
       print(f'WARNING: NUM_SAMPLES magic number does not match the positive samples\n\tNUM_SAMPLES: {NUM_SAMPLES}, ACTUAL_SAMPLES: {len(samples)}')
