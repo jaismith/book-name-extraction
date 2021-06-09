@@ -39,7 +39,7 @@ class preprocessing:
   # and place csv file in data/raw before running)
   def generate_positive():
     # open and load csv
-    file = open('data/raw/books.csv', 'r')
+    file = open('data/raw/books.csv')
     data = csv.reader(file)
 
     # open and load pre-tagged positive data
@@ -61,7 +61,7 @@ class preprocessing:
 
     # generate samples
     samples = pretagged_pos_data + ([None] * len(rows))
-    print(pretagged_pos_data)
+
     # warning if mismatched num samples
     if (len(samples) != NUM_SAMPLES):
       print(f'WARNING: NUM_SAMPLES magic number does not match the positive samples\n\tNUM_SAMPLES: {NUM_SAMPLES}, ACTUAL_SAMPLES: {len(samples)}')
@@ -121,7 +121,7 @@ class preprocessing:
 
   def generate_negative():
     # load orc
-    orc = json.loads(open('data/raw/orc.json', 'r').read())
+    orc = json.loads(open('data/raw/orc.json').read())
 
     # open and load pre-tagged positive data
     pretagged_neg_file = open('data/pretagged/negative.json')
