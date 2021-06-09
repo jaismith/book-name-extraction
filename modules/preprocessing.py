@@ -109,6 +109,8 @@ class preprocessing:
         prefix = ',' if random.random() > 0.65 else ''
         samples[i + len(pretagged_pos_data)] += f'{prefix} {s}'
 
+    print('Generated {} positive samples'.format(len(samples)))
+
     random.shuffle(samples)
 
     divider = int(len(samples) * .85)
@@ -146,6 +148,8 @@ class preprocessing:
     samples = pretagged_neg_data + ([None] * (NUM_SAMPLES - len(pretagged_neg_data)))
     for i in range(len(pretagged_neg_data), NUM_SAMPLES):
       samples[i] = get_sample()
+
+    print('Generated {} negative samples'.format(len(samples)))
 
     random.shuffle(samples)
 
