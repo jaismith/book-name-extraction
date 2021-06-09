@@ -34,7 +34,7 @@ def rule_based_clumping(samples):
 
   return output
 
-class preprocessing:
+class generators:
   # uses https://www.kaggle.com/jealousleopard/goodreadsbooks/download (download
   # and place csv file in data/raw before running)
   def generate_positive():
