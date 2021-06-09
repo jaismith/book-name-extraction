@@ -43,7 +43,7 @@ def generate_positive():
 
   # open and load pre-tagged positive data
   pretagged_pos_file = open('data/pretagged/positive.json')
-  pretagged_pos_data = json.loads(pretagged_pos_file)
+  pretagged_pos_data = json.loads(pretagged_pos_file.read())
 
   # extract rows (throw away headers)
   rows = list(data)[1:]
@@ -126,7 +126,7 @@ def generate_negative():
 
   # open and load pre-tagged positive data
   pretagged_neg_file = open('data/pretagged/negative.json')
-  pretagged_neg_data = json.loads(pretagged_neg_file)
+  pretagged_neg_data = json.loads(pretagged_neg_file.read())
 
   # extract descriptions (will generate 'negative' samples from this,
   # as it representative of the type of text textbook names are commonly
